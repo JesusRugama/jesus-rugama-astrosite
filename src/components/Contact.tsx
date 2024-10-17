@@ -8,8 +8,6 @@ function ContactForm() {
   const [state, handleSubmit] = useForm("xeoqqvzj");
   const [val, setVal] = useState('a')
 
-  console.log({val, state, handleSubmit})
-
   if (state.succeeded) {
     return <div className='text-neutral flex flex-col space-y-4 mb-[50px]'>
       <p>Thanks for joining!</p>
@@ -22,8 +20,6 @@ function ContactForm() {
       method="POST"
       onSubmit={(event) => {
         event.preventDefault();
-
-        console.log(event);
         handleSubmit(event);
       }}
       className='text-neutral flex flex-col space-y-4 mb-[50px]'
