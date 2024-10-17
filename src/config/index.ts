@@ -85,7 +85,7 @@ export const SITE_CONTENT: SiteContent = {
     description: `
       Hi, I’m Jesus Rugama, a Web Developer with a knack for crafting seamless digital experiences. With a strong background in back-end, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not meets the needs of users. My projects range from subscription SAASs to responsive web designs, all with a focus on performance, security, and scalability.
+      Over the years, I’ve honed my skills in building robust, user-friendly applications that meets the needs of users. My projects range from subscription SAASs to responsive web designs, all with a focus on performance, security, and scalability.
     `,
     image: "",
   },
