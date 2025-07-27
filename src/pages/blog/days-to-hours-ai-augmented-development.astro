@@ -1,0 +1,121 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { SITE_CONFIG } from "@config";
+
+// Blog post metadata
+const title = "From Days to Hours: AI-Augmented Development";
+const description = "How AI tools are transforming the software development lifecycle, reducing project timelines from days to hours while maintaining quality and innovation.";
+const publishDate = "2025-01-26";
+const author = "Jesus Rugama";
+const slug = "days-to-hours-ai-augmented-development"; // Custom URL slug
+---
+
+<Layout title={`${title} | ${SITE_CONFIG.title}`} description={description}>
+  <article class="prose prose-invert max-w-none">
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-white mb-4">{title}</h1>
+      <div class="flex items-center gap-4 text-gray-400 text-sm">
+        <span>By {author}</span>
+        <span>•</span>
+        <time datetime={publishDate}>{new Date(publishDate).toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })}</time>
+      </div>
+    </header>
+
+    <div class="text-gray-300 leading-relaxed space-y-6">
+      <p class="text-xl text-gray-200 font-medium">
+        How I deployed a Stencil design system with Storybook documentation to AWS in hours, not days using AI-augmented development.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white mt-8 mb-4">The Challenge</h2>
+      <p>
+        As a senior full-stack engineer, I wanted to build a modern design system that could:
+      </p>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li>Provide reusable Web Components using Stencil.js</li>
+        <li>Include comprehensive documentation via Storybook</li>
+        <li>Deploy to a custom subdirectory on my domain (<code>jesusrugama.com/stencil-design-system</code>)</li>
+        <li>Use production-grade AWS infrastructure with SSL and CDN</li>
+        <li>Maintain clean, modular code architecture</li>
+      </ul>
+      <p>
+        The traditional approach would take weeks of research, configuration, and debugging. Instead, I leveraged AI-augmented development to deliver a production-ready solution in a single session.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white mt-8 mb-4">The Technology Stack</h2>
+      
+      <h3 class="text-xl font-semibold text-white mt-6 mb-3">Frontend & Components</h3>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li><strong>Stencil.js</strong> - For building reusable Web Components</li>
+        <li><strong>Storybook</strong> - Component documentation and testing</li>
+        <li><strong>Tailwind CSS</strong> - Utility-first styling</li>
+        <li><strong>TypeScript</strong> - Type safety and better developer experience</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-white mt-6 mb-3">Infrastructure & Deployment</h3>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li><strong>AWS S3</strong> - Static site hosting</li>
+        <li><strong>CloudFront</strong> - Global CDN with SSL termination</li>
+        <li><strong>Route 53</strong> - DNS management</li>
+        <li><strong>ACM</strong> - SSL certificate management</li>
+        <li><strong>Terraform</strong> - Infrastructure as Code</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-white mt-6 mb-3">Development Tools</h3>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li><strong>Windsurf Cascade</strong> - AI-augmented development assistant</li>
+        <li><strong>Vite</strong> - Fast build tooling</li>
+        <li><strong>PostCSS</strong> - CSS processing pipeline</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold text-white mt-8 mb-4">Architecture Overview</h2>
+      <p>
+        The solution uses a <strong>path-based routing</strong> approach where:
+      </p>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li>Root domain (<code>jesusrugama.com</code>) serves the main website</li>
+        <li>Subdirectory (<code>/stencil-design-system/*</code>) serves the Storybook documentation</li>
+        <li>CloudFront handles routing and SSL termination</li>
+        <li>S3 buckets store static assets</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold text-white mt-8 mb-4">Conclusion</h2>
+    <p>This project demonstrates the power of <strong>AI-augmented development</strong> for complex, multi-system integrations. By combining:</p>
+    <ul class="list-disc list-inside space-y-2 ml-4">
+    <li><strong>Senior engineering experience</strong> for architectural decisions</li>
+    <li><strong>AI assistance</strong> for rapid implementation and debugging</li>
+    <li><strong>Modern tooling</strong> for optimal developer experience</li>
+    <li><strong>Production-grade infrastructure</strong> for reliability and performance</li>
+    </ul>
+    <p>We delivered a complete design system solution that would traditionally take weeks in just a few hours.</p>
+
+      <div class="bg-blue-900/30 border border-blue-700 rounded-lg p-6 mt-8 mb-8">
+        <h3 class="text-lg font-semibold text-white mb-3">💡 Key Takeaway (This was added by initiative of my AI assistant, no joke)</h3>
+        <p class="text-blue-200">
+          AI-augmented development isn't about replacing developers—it's about amplifying their capabilities and freeing them to focus on what matters most: solving real problems and creating value.
+        </p>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .prose h2 {
+    @apply border-b border-gray-700 pb-2;
+  }
+  
+  .prose ul li {
+    @apply text-gray-300;
+  }
+  
+  .prose strong {
+    @apply text-white;
+  }
+  
+  .prose code {
+    @apply bg-gray-800 text-blue-300 px-2 py-1 rounded text-sm;
+  }
+</style>
