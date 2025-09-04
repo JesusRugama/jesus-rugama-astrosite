@@ -1,17 +1,17 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Jesus Rugama — Web Developer",
+  title: "Jesus Rugama - Software Engineer",
   author: "Jesus Rugama",
   description:
     "Software Engineer based in Nicaragua. Laravel and React development specialist.",
   lang: "en",
   siteLogo: "",
   navLinks: [
-    { text: "Experience", href: "#experience" },
-    { text: "Projects", href: "#projects" },
-    { text: "About", href: "#about" },
-    { text: "Contact", href: "#contact" },
+    { text: "Experience", href: "/#experience" },
+    { text: "Projects", href: "/#projects" },
+    { text: "About", href: "/#about" },
+    { text: "Contact", href: "/#contact" },
   ],
   socialLinks: [
     // { text: "Twitter", href: "https://github.com/immois/astro-zen" },
