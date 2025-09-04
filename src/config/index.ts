@@ -20,8 +20,8 @@ export const SITE_CONFIG: SiteConfig = {
     // { text: "Youtube", href: "https://github.com/immois/astro-zen" },
     // { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
   ],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  socialImage: "",
+  canonicalURL: "https://jesusrugama.com",
 };
 
 export const SITE_CONTENT: SiteContent = {
