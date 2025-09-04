@@ -29,26 +29,41 @@ export const SITE_CONTENT: SiteContent = {
     name: "Jesus Rugama",
     specialty: "Full Stack Web Developer",
     summary:
-      "Developer based in Nicaragua. I specialize React and Laravel development.",
+      "Software Engineer based in Nicaragua. I build scalable, maintainable, and high-performing web applications.",
     email: "example@email.com",
   },
   experience: [
     {
-      company: "Trillage",
-      position: "Full Stack Developer",
-      startDate: "Aug 2024",
-      endDate: "",
+      company: "Career Certified",
+      position: "Senior Software Engineer",
+      startDate: "December 2024",
+      endDate: "Today",
       summary: [
+          "Contributed to frontend migration from a monolithic PHP codebase to a high-performance distributed solution with static frontend.",
+          "Expanded and Maintained the frontend design system.",
+          "Updated infrastructure as code using Terraform to support deployments and scalability.",
+      ],
+    },
+    {
+      company: "PromptForm",
+      position: "AI Integration Developer",
+      startDate: "September 2023",
+      endDate: "December 2023",
+      summary: [
+        "Developed AI-powered features in a Django-based SaaS handling multiple LLM integrations.",
+        "Built a ComfyUI-based pipeline combining Hugging Face’s Stable Diffusion models to transform user sketches + descriptions into realistic images.",
+        "Implemented a second pipeline to upscale images by 4× without quality loss.",
       ],
     },
     {
       company: "Atmosphere TV",
-      position: "Full Stack Developer",
+      position: "Senior Software Engineer",
       startDate: "January 2022",
       endDate: "April 2023",
       summary: [
-        "Migrated the Laravel legacy site to a NuxtJS site with SSG",
-        "Created react editable animations that would be rendered and inserted in the streaming service as ads.",
+        "Migrated company marketing site from Laravel to Nuxt.js with SSG improving homepage load time from ~3s to 0.5s and raising Google PageSpeed Insights score to 90.",
+        "Built animated ad templates in React with live editing and preview capabilities, enabling businesses to create in-venue ads.",
+        "Implemented Google Analytics tracking scripts and A/B testing, using Lambda@Edge to serve variant pages in a static environment.",
       ],
     },
     {
