@@ -1,14 +1,52 @@
-"use client";
+ "use client";
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
-import React, { useState } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import React, {useState, useRef, type ChangeEvent, type FormEvent} from 'react';
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm("xeoqqvzj");
-  const [val, setVal] = useState('a')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-  if (state.succeeded) {
+  const submitting = useRef(false);
+  const succeeded = useRef(false);
+
+  const handleFieldOnChange =  (event: ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
+      setFormData({
+        ...formData,
+        [event.target.name]: event.target.value
+      })
+  }
+
+  const handleFormSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    submitting.current = true;
+
+    fetch("https://getform.io/f/aroggzqb", {
+      method: "POST",
+      body: (() => {
+        const form = new FormData()
+        form.append('name', formData.name);
+        form.append('email', formData.email);
+        form.append('message', formData.message);
+
+        return form;
+      })(),
+      headers: {
+        "Accept": "application/json",
+      },
+    })
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+
+    submitting.current = false;
+    succeeded.current = true;
+  }
+
+  if (succeeded.current) {
     return <div className='text-neutral flex flex-col space-y-4 mb-[50px]'>
       <p>Thanks for joining!</p>
     </div>;
@@ -16,45 +54,47 @@ function ContactForm() {
 
   return (
     <form
-      action="https://formspree.io/f/xeoqqvzj"
+      action="https://getform.io/f/aroggzqb"
       method="POST"
-      onSubmit={(event) => {
-        event.preventDefault();
-        handleSubmit(event);
-      }}
+      onSubmit={handleFormSubmit}
       className='text-neutral flex flex-col space-y-4 mb-[50px]'
     >
-      <label htmlFor="email">
+      <label htmlFor="contact-name">
+        Name
+      </label>
+      <input
+          id="contact-name"
+          type="name"
+          name="name"
+          className='border border-neutral rounded-md p-2'
+          value={formData.name}
+          onChange={handleFieldOnChange}
+      />
+      <label htmlFor="contact-email">
         Email Address
       </label>
       <input
-        id="email"
+        id="contact-email"
         type="email"
         name="email"
         className='border border-neutral rounded-md p-2'
+        value={formData.email}
+        onChange={handleFieldOnChange}
       />
-      <ValidationError
-        prefix="Email"
-        field="email"
-        errors={state.errors}
-      />
-      <label htmlFor="message">
+      <label htmlFor="contact-message">
         Message
       </label>
       <textarea
-        id="message"
+        id="contact-message"
         name="message"
         rows={6}
         className='border border-neutral rounded-md p-2'
-      />
-      <ValidationError
-        prefix="Message"
-        field="message"
-        errors={state.errors}
+        value={formData.message}
+        onChange={handleFieldOnChange}
       />
       <button
         type="submit"
-        disabled={state.submitting}
+        disabled={submitting.current}
         className='bg-primary rounded-md p-2 text-white'
       >
         Submit
