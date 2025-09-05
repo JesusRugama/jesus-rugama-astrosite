@@ -15,6 +15,6 @@ import Section from "@components/Section.astro";
   <Projects projects={SITE_CONTENT.projects} />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
   <Section text="Contact" href="contact">
-    <ContactForm></ContactForm>
+    <ContactForm client:load></ContactForm>
   </Section>
 </Layout>
