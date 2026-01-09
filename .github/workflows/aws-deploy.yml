@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'website/**'
+      - '.github/workflows/**'
 defaults:
   run:
     working-directory: website
