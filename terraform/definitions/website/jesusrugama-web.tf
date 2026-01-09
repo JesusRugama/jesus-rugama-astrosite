@@ -25,7 +25,7 @@ data "aws_route53_zone" "main" {
 
 # S3 bucket for main site using module
 module "main_site_bucket" {
-  source = "./modules/s3-website"
+  source = "../../modules/s3-website"
   
   bucket_name    = "jesusrugama-main-site"
   error_document = "404.html"

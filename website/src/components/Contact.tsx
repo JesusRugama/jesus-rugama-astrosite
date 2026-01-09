@@ -28,17 +28,15 @@ function ContactForm() {
     setError(null);
 
     try {
-      const response = await fetch("https://getform.io/f/aroggzqb", {
+      const response = await fetch("https://api.jesusrugama.com/contact", {
         method: "POST",
-        body: (() => {
-          const form = new FormData();
-          form.append('name', formData.name);
-          form.append('email', formData.email);
-          form.append('message', formData.message);
-          return form;
-        })(),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
         headers: {
-          Accept: "application/json",
+          "Content-Type": "application/json",
         },
       });
 
