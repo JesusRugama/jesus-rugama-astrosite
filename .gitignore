@@ -57,3 +57,5 @@ terraform.rc
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+lambda.zip

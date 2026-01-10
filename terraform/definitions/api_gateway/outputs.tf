@@ -1,6 +1,6 @@
 output "api_endpoint" {
   description = "API Gateway endpoint URL"
-  value       = aws_apigatewayv2_api.contact_api.api_endpoint
+  value       = aws_apigatewayv2_api.main.api_endpoint
 }
 
 output "custom_domain_endpoint" {

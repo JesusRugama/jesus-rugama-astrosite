@@ -73,7 +73,7 @@ resource "aws_iam_role_policy" "lambda_policy" {
 # Lambda Function
 resource "aws_lambda_function" "contact_form" {
   filename         = data.archive_file.lambda_zip.output_path
-  function_name    = "contact-form-handler"
+  function_name    = "jesusrugama_website_contact-form-handler"
   role             = aws_iam_role.lambda_role.arn
   handler          = "index.handler"
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
